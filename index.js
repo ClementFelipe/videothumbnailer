@@ -58,8 +58,8 @@ exports.handler = function(event, context) {
 
       function createThumbnail(next) {
         var scalingFactor = Math.min(thumbWidth / metadata.Width, thumbHeight / metadata.Height),
-        width = Math.round(scalingFactor * metadata.Width),
-        height = Math.round(scalingFactor * metadata.Height);
+        width = metadata.Width,
+        height = metadata.Height;
 
         if (isNaN(width)) width = thumbWidth;
         if (isNaN(height)) height = thumbHeight;
