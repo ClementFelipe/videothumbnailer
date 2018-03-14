@@ -64,7 +64,7 @@ exports.handler = function(event, context) {
         if (isNaN(width)) width = thumbWidth;
         if (isNaN(height)) height = thumbHeight;
         var ffmpeg = child_process.spawn("ffmpeg", [
-          "-ss","00:00:05", // time to take screenshot
+          "-ss","00:00:01", // time to take screenshot
           "-i", target, // url to stream from
           "-vf", "thumbnail,scale="+width+":"+height, 
           "-qscale:v" ,"2",
